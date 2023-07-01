@@ -1,0 +1,31 @@
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+<p> <%= startingContent %> </p>
+<a href="/compose">Compose a Blog</a>
+<p> 
+    <% newPostItem.forEach(function(post) { %>
+        <div class="item">
+            <h1> <%= post.title %>  </h1> 
+            <p>
+                <%= post.content.substring(0,100) + "..."%>
+                <a href="http://localhost:3000/posts/<%= post.title %>">Read more</a>
+            </p> 
+            
+        </div>
+    <% }); %>    
+</p>
+
+<%- include("partials/footer"); -%>
+
+
+<!--  using for loop
+
+    <% for(var i=0; i<newPostItem.length; i++) { %>
+        <div class="item">
+            <p> <%= newPostItem[i].title %>  </p> 
+            <p> <%= newPostItem[i].content %>  </p> 
+        </div>
+    <% } %> 
+
+-->
